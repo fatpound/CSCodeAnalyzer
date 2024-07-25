@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeAnalyzer", "CSCodeAnalyzer\CSCodeAnalyzer\CSCodeAnalyzer.csproj", "{719F95D4-301C-4AB8-BBAA-993919025BC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeAnalyzer.CodeFixes", "CSCodeAnalyzer\CSCodeAnalyzer.CodeFixes\CSCodeAnalyzer.CodeFixes.csproj", "{27FC2D95-F5CE-41C9-87CC-AFC3C0D2D660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeAnalyzer.Package", "CSCodeAnalyzer\CSCodeAnalyzer.Package\CSCodeAnalyzer.Package.csproj", "{C0354C51-3B4F-4DE4-ABEF-9512F9A80D07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeAnalyzer.Test", "CSCodeAnalyzer\CSCodeAnalyzer.Test\CSCodeAnalyzer.Test.csproj", "{3DCE675D-56E0-41E0-8699-4DB5D7E87380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeAnalyzer.Vsix", "CSCodeAnalyzer\CSCodeAnalyzer.Vsix\CSCodeAnalyzer.Vsix.csproj", "{2AF01AD4-D2C7-407D-836B-C662E00F0172}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{719F95D4-301C-4AB8-BBAA-993919025BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719F95D4-301C-4AB8-BBAA-993919025BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719F95D4-301C-4AB8-BBAA-993919025BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719F95D4-301C-4AB8-BBAA-993919025BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27FC2D95-F5CE-41C9-87CC-AFC3C0D2D660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27FC2D95-F5CE-41C9-87CC-AFC3C0D2D660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27FC2D95-F5CE-41C9-87CC-AFC3C0D2D660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27FC2D95-F5CE-41C9-87CC-AFC3C0D2D660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0354C51-3B4F-4DE4-ABEF-9512F9A80D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0354C51-3B4F-4DE4-ABEF-9512F9A80D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0354C51-3B4F-4DE4-ABEF-9512F9A80D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0354C51-3B4F-4DE4-ABEF-9512F9A80D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCE675D-56E0-41E0-8699-4DB5D7E87380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCE675D-56E0-41E0-8699-4DB5D7E87380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCE675D-56E0-41E0-8699-4DB5D7E87380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCE675D-56E0-41E0-8699-4DB5D7E87380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF01AD4-D2C7-407D-836B-C662E00F0172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF01AD4-D2C7-407D-836B-C662E00F0172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF01AD4-D2C7-407D-836B-C662E00F0172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF01AD4-D2C7-407D-836B-C662E00F0172}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE9F449B-6607-4BDA-9D93-D88E2FB27305}
+	EndGlobalSection
+EndGlobal
