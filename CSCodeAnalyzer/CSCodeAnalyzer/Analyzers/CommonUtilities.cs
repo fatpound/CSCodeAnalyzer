@@ -8,7 +8,7 @@ public static class CommonUtilities
 {
     public static bool IsPascalCase(string identifier)
     {
-        return Regex.IsMatch(identifier, @"^[A-Z][a-z0-9]*([A-Z][a-z0-9]*)*$");
+        return Regex.IsMatch(identifier, @"^[A-Z][a-z0-9]*(?:_[A-Z][a-z0-9]*)*$");
     }
 
     public static bool IsCamelCase(string identifier)
