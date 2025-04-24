@@ -70,5 +70,28 @@ namespace CodeAnalyzer.Analyzers.Naming
 
             Assert.Equal(0, diagnostics.Length);
         }
+
+        [Fact]
+        public void CheckPascalCase2()
+        {
+            string source = @"
+                using System;
+
+                namespace TestNamespace
+                {
+                    public class TestClass
+                    {
+                        public void testMethod()
+                        {
+
+                        }
+                    }
+                }";
+
+            var analyzer = new PascalCaseAnalyzer();
+            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+
+            Assert.Equal(1, diagnostics.Length);
+        }
     }
 }

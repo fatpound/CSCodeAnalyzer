@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using HFAnalyzer;
 
-namespace CSCodeAnalyzer
+namespace CodeAnalyzer.Analyzers.CodeStructure
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ParameterCountAnalyzer : DiagnosticAnalyzer

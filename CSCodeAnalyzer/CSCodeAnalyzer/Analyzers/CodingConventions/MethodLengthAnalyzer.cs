@@ -9,7 +9,7 @@ using HFAnalyzer;
 namespace CodeAnalyzer.Analyzers.CodingConventions
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    class MethodLengthAnalyzer : DiagnosticAnalyzer
+    public class MethodLengthAnalyzer : DiagnosticAnalyzer
     {
         private static readonly DiagnosticDescriptor Rule = DiagnosticRules.MethodLengthRule;
 

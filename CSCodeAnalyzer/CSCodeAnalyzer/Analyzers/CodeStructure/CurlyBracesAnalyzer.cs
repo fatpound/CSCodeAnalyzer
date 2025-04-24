@@ -8,7 +8,7 @@ using HFAnalyzer;
 
 namespace CodeAnalyzer.Analyzers.CodeStructure
 {
-    class CurlyBracesAnalyzer : DiagnosticAnalyzer
+    public class CurlyBracesAnalyzer : DiagnosticAnalyzer
     {
         private static readonly DiagnosticDescriptor Rule = DiagnosticRules.CurlyBracesRule;
 

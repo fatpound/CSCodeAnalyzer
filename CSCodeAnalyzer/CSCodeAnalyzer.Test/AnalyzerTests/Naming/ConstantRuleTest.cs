@@ -1,4 +1,5 @@
-﻿using HFAnalyzer;
+﻿using CodeAnalyzer.Analyzers.Naming;
+using HFAnalyzer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -30,7 +31,7 @@ namespace CodeAnalyzer.Analyzers.Naming
                         }
                 }";
 
-            var analyzer = new ConstantRuleAnalyzer();
+            var analyzer = new ConstantAnalyzer();
             var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
@@ -57,7 +58,7 @@ namespace CodeAnalyzer.Analyzers.Naming
                     }
                 }";
 
-            var analyzer = new ConstantRuleAnalyzer();
+            var analyzer = new ConstantAnalyzer();
             var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);

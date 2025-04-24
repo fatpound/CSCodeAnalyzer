@@ -9,7 +9,7 @@ using HFAnalyzer;
 namespace CodeAnalyzer.Analyzers.CodingConventions
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    class VarBanAnalyzer : DiagnosticAnalyzer
+    public class VarBanAnalyzer : DiagnosticAnalyzer
     {
         private static readonly DiagnosticDescriptor Rule = DiagnosticRules.VarBanRule;
 
