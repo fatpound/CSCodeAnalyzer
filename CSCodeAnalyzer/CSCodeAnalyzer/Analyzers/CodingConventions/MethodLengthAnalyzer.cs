@@ -31,9 +31,12 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
 
                 if (endLine - startLine > 30)
                 {
-                    var diagnostic = Diagnostic.Create(Rule,
-                                                       methodDeclaration.Identifier.GetLocation(),
-                                                       methodDeclaration.Identifier.Text);
+                    var diagnostic = Diagnostic.Create(
+                        Rule,
+                        methodDeclaration.Identifier.GetLocation(),
+                        methodDeclaration.Identifier.Text
+                    );
+
                     context.ReportDiagnostic(diagnostic);
                 }
             }

@@ -40,9 +40,12 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
 
                     if (nextMethodStartLine - currentMethodEndLine <= 1)
                     {
-                        var diagnostic = Diagnostic.Create(Rule,
-                                                           nextMethod.Identifier.GetLocation(),
-                                                           nextMethod.Identifier);
+                        var diagnostic = Diagnostic.Create(
+                            Rule,
+                            nextMethod.Identifier.GetLocation(),
+                            nextMethod.Identifier
+                        );
+
                         context.ReportDiagnostic(diagnostic);
                     }
                 }

@@ -14,8 +14,7 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
     {
         private static readonly DiagnosticDescriptor Rule = DiagnosticRules.CodeBlockScopingRule;
         
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
-            => ImmutableArray.Create(Rule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -37,7 +36,5 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
                 }
             }
         }
-
-
     }
 }

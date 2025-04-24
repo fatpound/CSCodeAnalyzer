@@ -22,7 +22,6 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
             context.RegisterSyntaxNodeAction(AnalyzeIfStatement, SyntaxKind.ElseClause);
             context.RegisterSyntaxNodeAction(AnalyzeSingleStatement, SyntaxKind.ForStatement);
             context.RegisterSyntaxNodeAction(AnalyzeSingleStatement, SyntaxKind.WhileStatement);
-            ;
         }
 
         private void AnalyzeIfStatement(SyntaxNodeAnalysisContext context)
@@ -61,6 +60,5 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
                 context.ReportDiagnostic(diagnostic);
             }
         }
-
     }
 }

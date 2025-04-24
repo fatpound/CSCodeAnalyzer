@@ -31,9 +31,12 @@ namespace CodeAnalyzer.Analyzers.Naming
 
                 if (CommonUtilities.IsPascalCase(className) == false)
                 {
-                    var diagnostic = Diagnostic.Create(Rule,
-                                                       classDeclaration.Identifier.GetLocation(),
-                                                       classDeclaration.Identifier.Text, className);
+                    var diagnostic = Diagnostic.Create(
+                        Rule,
+                        classDeclaration.Identifier.GetLocation(),
+                        classDeclaration.Identifier.Text,
+                        className
+                    );
 
                     context.ReportDiagnostic(diagnostic);
                 }
@@ -44,9 +47,12 @@ namespace CodeAnalyzer.Analyzers.Naming
 
                 if (CommonUtilities.IsPascalCase(methodName) == false)
                 {
-                    var diagnostic = Diagnostic.Create(Rule,
-                                                       methodDeclaration.Identifier.GetLocation(),
-                                                       methodDeclaration.Identifier.Text, methodName);
+                    var diagnostic = Diagnostic.Create(
+                        Rule,
+                        methodDeclaration.Identifier.GetLocation(),
+                        methodDeclaration.Identifier.Text,
+                        methodName
+                    );
 
                     context.ReportDiagnostic(diagnostic);
                 }

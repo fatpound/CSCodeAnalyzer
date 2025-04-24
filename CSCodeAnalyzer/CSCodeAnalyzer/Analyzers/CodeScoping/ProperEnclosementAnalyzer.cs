@@ -12,8 +12,7 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
     public class ProperEnclosementAnalyzer : DiagnosticAnalyzer
     {
         private static readonly DiagnosticDescriptor Rule = DiagnosticRules.ProperEnclosementRule;
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
-            => ImmutableArray.Create(Rule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {

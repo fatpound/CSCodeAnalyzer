@@ -40,7 +40,8 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
 
         private void AnalyzeDepth(IfStatementSyntax ifStatement, ref int currentIfDepth, ref int maxDepth)
         {
-            currentIfDepth++;
+            ++currentIfDepth;
+
             if (currentIfDepth > maxDepth)
             {
                 maxDepth = currentIfDepth;
@@ -57,7 +58,7 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
                 }
             }
 
-            currentIfDepth--;
+            --currentIfDepth;
         }
     }
 }

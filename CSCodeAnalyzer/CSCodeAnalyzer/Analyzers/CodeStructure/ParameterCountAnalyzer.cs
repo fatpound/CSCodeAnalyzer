@@ -22,8 +22,6 @@ namespace CSCodeAnalyzer
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
             context.EnableConcurrentExecution();
-
-
             context.RegisterSyntaxNodeAction(AnalyzeParameterCount, SyntaxKind.MethodDeclaration);
         }
 
@@ -33,9 +31,12 @@ namespace CSCodeAnalyzer
             {
                 if (methodDeclaration.ParameterList.Parameters.Count > 5)
                 {
-                    var diagnostic = Diagnostic.Create(Rule,
-                                                       methodDeclaration.Identifier.GetLocation(),
-                                                       methodDeclaration.Identifier.Text);
+                    var diagnostic = Diagnostic.Create(
+                        Rule,
+                        methodDeclaration.Identifier.GetLocation(),
+                        methodDeclaration.Identifier.Text
+                    );
+
                     context.ReportDiagnostic(diagnostic);
                 }
             }

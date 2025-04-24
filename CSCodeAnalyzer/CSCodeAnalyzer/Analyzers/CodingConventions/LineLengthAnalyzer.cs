@@ -11,10 +11,8 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class LineLengthAnalyzer : DiagnosticAnalyzer
     {
-
         private static readonly DiagnosticDescriptor Rule = DiagnosticRules.LineLengthRule;
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
-            => ImmutableArray.Create(Rule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -33,9 +31,12 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
                 var line = lines[i];
                 if (line.Length > 120)
                 {
-                    var diagnostic = Diagnostic.Create(DiagnosticRules.LineLengthRule,
-                                                       Location.Create(context.Tree,
-                                                       new TextSpan(root.GetLocation().SourceSpan.Start + i, line.Length)), i + 1);
+                    var diagnostic = Diagnostic.Create(
+                        Rule,
+                        Location.Create(context.Tree,
+                        new TextSpan(root.GetLocation().SourceSpan.Start + i, line.Length)), i + 1
+                    );
+
                     context.ReportDiagnostic(diagnostic);
                 }
             }

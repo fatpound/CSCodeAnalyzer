@@ -25,12 +25,12 @@ public static class CommonUtilities
     {
         var leadingTrivia = Node.GetLeadingTrivia();
         var spaceCount = leadingTrivia.Count(t => t.IsKind(SyntaxKind.WhitespaceTrivia));
+
         return spaceCount % spacesPerIndentation == 0;
     }
 
     public static bool IsIdentifierUsedInCode(SyntaxNode root, string identifier)
     {
-        return root.DescendantNodes().OfType<IdentifierNameSyntax>()
-                   .Any(id => id.Identifier.Text == identifier);
+        return root.DescendantNodes().OfType<IdentifierNameSyntax>().Any(id => id.Identifier.Text == identifier);
     }
 }

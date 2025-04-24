@@ -28,9 +28,12 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
             {
                 if (!classDeclaration.Modifiers.Any(SyntaxKind.PublicKeyword))
                 {
-                    var diagnostic = Diagnostic.Create(Rule
-                                                       , classDeclaration.Identifier.GetLocation()
-                                                       , classDeclaration.Identifier.Text);
+                    var diagnostic = Diagnostic.Create(
+                        Rule,
+                        classDeclaration.Identifier.GetLocation(),
+                        classDeclaration.Identifier.Text
+                    );
+
                     context.ReportDiagnostic(diagnostic);
                 }
             }

@@ -40,19 +40,20 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
 
         private static bool IsNullOrDefaultComparison(ExpressionSyntax condition)
         {
-            if (condition is BinaryExpressionSyntax binaryExpression &&
+            if (condition is BinaryExpressionSyntax binaryExpression
+                &&
                 binaryExpression.IsKind(SyntaxKind.EqualsExpression))
             {
                 // Check if either side of the binary expression is a null literal
-                if (binaryExpression.Left.IsKind(SyntaxKind.NullLiteralExpression) ||
+                if (binaryExpression.Left.IsKind(SyntaxKind.NullLiteralExpression)
+                    ||
                     binaryExpression.Right.IsKind(SyntaxKind.NullLiteralExpression))
                 {
                     return true;
                 }
             }
+
             return false;
         }
-
-
     }
 }

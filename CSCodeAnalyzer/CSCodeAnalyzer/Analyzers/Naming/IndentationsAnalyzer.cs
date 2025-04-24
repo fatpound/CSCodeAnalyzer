@@ -13,8 +13,7 @@ namespace CodeAnalyzer.Analyzers.Naming
     {
         private static readonly DiagnosticDescriptor Rule = HFAnalyzer.DiagnosticRules.IndentationRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
-            => ImmutableArray.Create(DiagnosticRules.IndentationRule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(DiagnosticRules.IndentationRule);
 
         public override void Initialize(AnalysisContext context)
         {
