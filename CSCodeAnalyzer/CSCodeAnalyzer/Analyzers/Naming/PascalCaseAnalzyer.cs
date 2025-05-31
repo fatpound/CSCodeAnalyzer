@@ -3,15 +3,13 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Resources;
-using HFAnalyzer;
 
-namespace CodeAnalyzer.Analyzers.Naming
+namespace CSCodeAnalyzer.Analyzers.Naming
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class PascalCaseAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.PascalCaseRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.PascalCaseRule;
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 

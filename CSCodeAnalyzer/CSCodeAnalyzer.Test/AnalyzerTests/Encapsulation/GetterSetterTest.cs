@@ -1,11 +1,7 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Diagnostics;
-using System.Collections.Immutable;
+﻿using Microsoft.CodeAnalysis;
 using Xunit;
 
-namespace CodeAnalyzer.Analyzers.Encapsulation
+namespace CSCodeAnalyzer.Analyzers.Encapsulation
 {
     public class GetterSetterAnalyzerTests
     {
@@ -49,7 +45,7 @@ namespace CodeAnalyzer.Analyzers.Encapsulation
                 }";
 
             var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Empty(diagnostics);
         }
@@ -74,7 +70,7 @@ namespace CodeAnalyzer.Analyzers.Encapsulation
                 }";
 
             var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }
@@ -93,7 +89,7 @@ namespace CodeAnalyzer.Analyzers.Encapsulation
         }";
 
             var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
@@ -113,7 +109,7 @@ namespace CodeAnalyzer.Analyzers.Encapsulation
         }";
 
             var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
@@ -133,7 +129,7 @@ namespace CodeAnalyzer.Analyzers.Encapsulation
                 }";
 
             var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }

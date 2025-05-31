@@ -1,15 +1,9 @@
-using CodeAnalyzer.Analyzers.CodingConventions;
 using Microsoft.CodeAnalysis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace CodeAnalyzer.Analyzers.CodingConventions
+namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
-    public class VarBanTest
+    public class VarBanTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -34,7 +28,7 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
                 }";
 
             var analyzer = new VarBanAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

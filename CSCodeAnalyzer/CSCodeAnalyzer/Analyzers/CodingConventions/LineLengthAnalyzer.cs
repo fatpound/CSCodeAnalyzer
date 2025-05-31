@@ -1,17 +1,14 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
 using System.Collections.Immutable;
-using System.Linq;
 
-namespace CodeAnalyzer.Analyzers.CodingConventions
+namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class LineLengthAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.LineLengthRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.LineLengthRule;
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)

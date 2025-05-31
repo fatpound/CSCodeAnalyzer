@@ -3,15 +3,13 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Resources;
-using HFAnalyzer;
 
-namespace CodeAnalyzer.Analyzers.CodingConventions
+namespace CSCodeAnalyzer.Analyzers.Identifiers
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class PublicClassAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.PublicClassRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.PublicClassRule;
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 

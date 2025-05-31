@@ -1,15 +1,9 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.CodeAnalysis.Text;
-using System.Collections.Immutable;
+﻿using Microsoft.CodeAnalysis;
 using Xunit;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace CodeAnalyzer.Analyzers.CodingConventions
+namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
-    public class LineLengthTest
+    public class LineLengthTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -31,7 +25,7 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
                 }";
 
             var analyzer = new LineLengthAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
@@ -58,7 +52,7 @@ namespace CodeAnalyzer.Analyzers.CodingConventions
                 }";
 
             var analyzer = new LineLengthAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }

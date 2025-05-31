@@ -1,19 +1,9 @@
-using CodeAnalyzer;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.CodeAnalysis.Text;
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace CodeAnalyzer.Analyzers.Naming
+namespace CSCodeAnalyzer.Analyzers.Naming
 {
-    public class CamelCaseTest
+    public class CamelCaseTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -40,7 +30,7 @@ namespace CodeAnalyzer.Analyzers.Naming
                 }";
 
             var analyzer = new CamelCaseAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(2, diagnostics.Length);
 
@@ -73,7 +63,7 @@ namespace CodeAnalyzer.Analyzers.Naming
                 }";
 
             var analyzer = new CamelCaseAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }

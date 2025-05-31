@@ -1,17 +1,15 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Collections.Generic;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace CodeAnalyzer.Analyzers.CodeScoping
+namespace CSCodeAnalyzer.Analyzers.CodeScoping
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class NullReferenceAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.NullReferenceRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.NullReferenceRule;
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
             => ImmutableArray.Create(Rule);
 

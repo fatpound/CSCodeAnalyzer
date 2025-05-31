@@ -1,17 +1,15 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace CodeAnalyzer.Analyzers.Encapsulation
+namespace CSCodeAnalyzer.Analyzers.Encapsulation
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class GetterSetterAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.GetterSetterRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.GetterSetterRule;
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)

@@ -1,15 +1,9 @@
-using CodeAnalyzer.Analyzers.CodeStructure;
 using Microsoft.CodeAnalysis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace CodeAnalyzer.Analyzers.CodeStructure
+namespace CSCodeAnalyzer.Analyzers.CodeStructure
 {
-    public class ParameterCountTest
+    public class ParameterCountTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -34,7 +28,7 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
                 }";
 
             var analyzer = new ParameterCountAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -57,7 +51,7 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
                 }";
 
             var analyzer = new ParameterCountAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -80,7 +74,7 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
                 }";
 
             var analyzer = new ParameterCountAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

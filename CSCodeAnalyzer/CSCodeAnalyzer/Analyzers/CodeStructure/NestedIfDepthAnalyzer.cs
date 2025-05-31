@@ -3,15 +3,13 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Linq;
-using HFAnalyzer;
 
-namespace CodeAnalyzer.Analyzers.CodeStructure
+namespace CSCodeAnalyzer.Analyzers.CodeStructure
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class NestedIfDepthAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.NestedIfCounterRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.NestedIfCounterRule;
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 

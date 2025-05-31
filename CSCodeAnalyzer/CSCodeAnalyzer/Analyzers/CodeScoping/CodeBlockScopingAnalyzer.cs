@@ -3,16 +3,13 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Resources;
-using HFAnalyzer;
-using System;
 
-namespace CodeAnalyzer.Analyzers.CodeScoping
+namespace CSCodeAnalyzer.Analyzers.CodeScoping
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class CodeBlockScopingAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.CodeBlockScopingRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.CodeBlockScopingRule;
         
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

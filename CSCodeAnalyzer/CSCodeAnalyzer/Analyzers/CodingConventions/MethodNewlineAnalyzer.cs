@@ -3,16 +3,14 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Resources;
-using HFAnalyzer;
 using System.Linq;
 
-namespace CodeAnalyzer.Analyzers.CodingConventions
+namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class MethodNewlineAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.MethodNewLineRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.MethodNewLineRule;
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 

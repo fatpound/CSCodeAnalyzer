@@ -1,11 +1,7 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Diagnostics;
-using System.Collections.Immutable;
+﻿using Microsoft.CodeAnalysis;
 using Xunit;
 
-namespace CodeAnalyzer.Analyzers.CodeScoping
+namespace CSCodeAnalyzer.Analyzers.CodeScoping
 {
     public class ProperEnclosementAnalyzerTests
     {
@@ -32,7 +28,7 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
                 }";
 
             var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Empty(diagnostics);
         }
@@ -55,7 +51,7 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
                 }";
 
             var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }
@@ -78,7 +74,7 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
                 }";
 
             var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }
@@ -101,7 +97,7 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
                 }";
 
             var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }

@@ -1,17 +1,15 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
-using System.Collections.Immutable;
-using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections.Immutable;
 
-namespace CodeAnalyzer.Analyzers.CodeScoping
+namespace CSCodeAnalyzer.Analyzers.CodeScoping
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ProperEnclosementAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.ProperEnclosementRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.ProperEnclosementRule;
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
@@ -35,7 +33,7 @@ namespace CodeAnalyzer.Analyzers.CodeScoping
                 {
                     var parenthesizedExpression = (ParenthesizedExpressionSyntax)childNode;
                     // Check for mismatched parentheses
-                    var openParenToken = parenthesizedExpression.OpenParenToken;
+                    var openParenToken  = parenthesizedExpression.OpenParenToken;
                     var closeParenToken = parenthesizedExpression.CloseParenToken;
 
                     // Check for unclosed parentheses

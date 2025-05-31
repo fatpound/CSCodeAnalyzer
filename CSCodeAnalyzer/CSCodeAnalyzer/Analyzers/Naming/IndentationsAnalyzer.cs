@@ -1,19 +1,17 @@
-﻿using HFAnalyzer;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace CodeAnalyzer.Analyzers.Naming
+namespace CSCodeAnalyzer.Analyzers.Naming
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class IndentationsAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = HFAnalyzer.DiagnosticRules.IndentationRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.IndentationRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(DiagnosticRules.IndentationRule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Diagnostics.IndentationRule);
 
         public override void Initialize(AnalysisContext context)
         {

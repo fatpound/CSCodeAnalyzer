@@ -1,16 +1,9 @@
-﻿using CodeAnalyzer.Analyzers.Naming;
-using HFAnalyzer;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.CodeAnalysis.Text;
-using System.Collections.Immutable;
+﻿using Microsoft.CodeAnalysis;
 using Xunit;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace CodeAnalyzer.Analyzers.Naming
+namespace CSCodeAnalyzer.Analyzers.Naming
 {
-    public class ConstantRuleTest
+    public class ConstantRuleTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -32,7 +25,7 @@ namespace CodeAnalyzer.Analyzers.Naming
                 }";
 
             var analyzer = new ConstantAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
@@ -59,7 +52,7 @@ namespace CodeAnalyzer.Analyzers.Naming
                 }";
 
             var analyzer = new ConstantAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

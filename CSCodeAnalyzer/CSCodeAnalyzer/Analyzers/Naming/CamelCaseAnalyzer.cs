@@ -3,16 +3,14 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
-using System.Resources;
-using HFAnalyzer;
 using System.Text.RegularExpressions;
 
-namespace CodeAnalyzer.Analyzers.Naming
+namespace CSCodeAnalyzer.Analyzers.Naming
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class CamelCaseAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = DiagnosticRules.CamelCaseRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.CamelCaseRule;
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 

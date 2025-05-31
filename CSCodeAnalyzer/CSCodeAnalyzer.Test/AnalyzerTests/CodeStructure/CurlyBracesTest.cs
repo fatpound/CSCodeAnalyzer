@@ -1,15 +1,9 @@
-using CodeAnalyzer.Analyzers.CodeStructure;
 using Microsoft.CodeAnalysis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace CodeAnalyzer.Analyzers.CodeStructure
+namespace CSCodeAnalyzer.Analyzers.CodeStructure
 {
-    public class CurlyBracesTest
+    public class CurlyBracesTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -37,7 +31,7 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
                 }";
 
             var analyzer = new CurlyBracesAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -68,7 +62,7 @@ namespace CodeAnalyzer.Analyzers.CodeStructure
                 }";
 
             var analyzer = new CurlyBracesAnalyzer();
-            var diagnostics = HFAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(3, diagnostics.Length);
         }
