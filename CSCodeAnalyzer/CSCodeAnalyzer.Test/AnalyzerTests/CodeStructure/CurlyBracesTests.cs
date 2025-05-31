@@ -30,8 +30,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
                     }
                 }";
 
-            var analyzer = new CurlyBracesAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new CurlyBracesAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -61,8 +61,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
                     }
                 }";
 
-            var analyzer = new CurlyBracesAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new CurlyBracesAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(3, diagnostics.Length);
         }

@@ -1,9 +1,9 @@
 using Microsoft.CodeAnalysis;
 using Xunit;
 
-namespace CSCodeAnalyzer.Analyzers.CodingConventions
+namespace CSCodeAnalyzer.Analyzers.Identifiers
 {
-    public class VarBanTests
+    public class PublicClassTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -11,24 +11,21 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
         };
 
         [Fact]
-        public void CheckVar0()
+        public void CheckPublicClass0()
         {
             string source = @"
                 using System;
 
                 namespace TestNamespace
                 {
-                    public class testClass
+                    class testClass
                     {
-                        public void testMethod()
-                        {
-                            var i = 0;
-                        }
+
                     }
                 }";
 
-            var analyzer = new VarBanAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new PublicClassAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

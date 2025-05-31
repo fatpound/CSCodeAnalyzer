@@ -29,8 +29,8 @@ namespace CSCodeAnalyzer.Analyzers.Naming
                     }
                 }";
 
-            var analyzer = new CamelCaseAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new CamelCaseAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(2, diagnostics.Length);
 
@@ -62,8 +62,8 @@ namespace CSCodeAnalyzer.Analyzers.Naming
                     }
                 }";
 
-            var analyzer = new CamelCaseAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new CamelCaseAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }

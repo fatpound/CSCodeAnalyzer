@@ -27,8 +27,8 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer = new MethodLengthAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new MethodLengthAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -91,8 +91,8 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer = new MethodLengthAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new MethodLengthAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

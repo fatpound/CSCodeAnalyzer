@@ -11,7 +11,7 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
     {
         private static readonly DiagnosticDescriptor Rule = Diagnostics.MethodLengthRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -25,7 +25,7 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
             if (context.Node is MethodDeclarationSyntax methodDeclaration)
             {
                 var startLine = methodDeclaration.GetLocation().GetLineSpan().StartLinePosition.Line;
-                var endLine = methodDeclaration.GetLocation().GetLineSpan().EndLinePosition.Line;
+                var endLine   = methodDeclaration.GetLocation().GetLineSpan().EndLinePosition.Line;
 
                 if (endLine - startLine > 30)
                 {

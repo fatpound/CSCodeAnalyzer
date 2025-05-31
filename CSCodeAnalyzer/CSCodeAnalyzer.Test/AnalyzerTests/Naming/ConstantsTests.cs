@@ -1,9 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
 using Xunit;
 
-namespace CSCodeAnalyzer.Analyzers.CodingConventions
+namespace CSCodeAnalyzer.Analyzers.Naming
 {
-    public class LineLengthTests
+    public class ConstantsTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -11,7 +11,7 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
         };
 
         [Fact]
-        public void CheckLineLength0()
+        public void CheckConstantRule0()
         {
             string source = @"
                 using System;
@@ -20,18 +20,18 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                 {
                     public class TestClass
                         {
-                            private const int MAX_VALUE= 100;private const int MAX_VALUE= 100;private const int MAX_VALUE= 100;private const int MAX_VALUE= 100;private const int MAX_VALUE= 100;private const int MAX_VALUE= 100;private const int MAX_VALUE= 100;private const int MAX_VALUE= 100;
+                            private const int MAX_VALUE = 100;
                         }
                 }";
 
-            var analyzer = new LineLengthAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ConstantsAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
 
         [Fact]
-        public void CheckLineLength1()
+        public void CheckConstantRule1()
         {
             string source = @"
                 using System;
@@ -43,18 +43,18 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                         public void TestMethod()
                         {
                             int i = 0;
-                            if (i== 0)
+                            if (i == 0)
                             {
-                                private const int maxValue =100;
+                                private const int maxValue = 100;
                             }
                         }
                     }
                 }";
 
-            var analyzer = new LineLengthAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ConstantsAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
-            Assert.Equal(0, diagnostics.Length);
+            Assert.Equal(1, diagnostics.Length);
         }
     }
 }

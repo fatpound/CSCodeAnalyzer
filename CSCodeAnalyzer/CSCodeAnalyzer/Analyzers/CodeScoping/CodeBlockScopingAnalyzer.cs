@@ -25,6 +25,7 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
             if (context.Node is BlockSyntax block)
             {
                 var statements = block.Statements;
+
                 if (statements.Count == 1 && statements.First() is BlockSyntax)
                 {
                     var diagnostic = Diagnostic.Create(Rule

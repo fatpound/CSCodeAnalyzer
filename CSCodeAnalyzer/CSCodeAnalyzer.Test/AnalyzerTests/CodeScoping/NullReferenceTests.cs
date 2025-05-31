@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CSCodeAnalyzer.Analyzers.CodeScoping
 {
-    public class NullReferenceAnalyzerTests
+    public class NullReferenceTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -31,8 +31,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new NullReferenceAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new NullReferenceAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Empty(diagnostics);
         }
@@ -58,8 +58,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new NullReferenceAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new NullReferenceAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }

@@ -12,14 +12,14 @@ namespace CSCodeAnalyzer.Analyzers.Naming
     {
         private static readonly DiagnosticDescriptor Rule = Diagnostics.CamelCaseRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
             context.EnableConcurrentExecution();
             context.RegisterSyntaxNodeAction(AnalyzeCamelCase, SyntaxKind.VariableDeclaration);
-            //context.RegisterSyntaxNodeAction(AnalyzeCamelCase, SyntaxKind.FieldDeclaration);
+            // context.RegisterSyntaxNodeAction(AnalyzeCamelCase, SyntaxKind.FieldDeclaration);
         }
 
         public static void AnalyzeCamelCase(SyntaxNodeAnalysisContext context)

@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
-    public class GotoBanTests
+    public class VarBanTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -11,7 +11,7 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
         };
 
         [Fact]
-        public void CheckGoto0()
+        public void CheckVar0()
         {
             string source = @"
                 using System;
@@ -22,14 +22,13 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     {
                         public void testMethod()
                         {
-                            label:
-                                    goto label;
+                            var i = 0;
                         }
                     }
                 }";
 
-            var analyzer = new GotoBanAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new VarBanAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

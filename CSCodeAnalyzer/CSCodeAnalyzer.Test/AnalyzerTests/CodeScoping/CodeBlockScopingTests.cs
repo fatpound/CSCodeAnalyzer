@@ -29,8 +29,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new CodeBlockScopingAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new CodeBlockScopingAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }
@@ -56,8 +56,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new CodeBlockScopingAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new CodeBlockScopingAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(2, diagnostics.Length);
         }

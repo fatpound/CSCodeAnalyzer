@@ -32,8 +32,8 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer = new MethodNewlineAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new MethodNewlineAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -63,8 +63,8 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer = new MethodNewlineAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new MethodNewlineAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(2, diagnostics.Length);
         }
@@ -98,8 +98,8 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer = new MethodNewlineAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new MethodNewlineAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(3, diagnostics.Length);
         }
@@ -134,8 +134,8 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer = new MethodNewlineAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new MethodNewlineAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(2, diagnostics.Length);
         }
@@ -170,8 +170,8 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer = new MethodNewlineAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new MethodNewlineAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(2, diagnostics.Length);
         }

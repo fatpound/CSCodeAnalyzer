@@ -10,9 +10,9 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class MethodNewlineAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = Diagnostics.MethodNewLineRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.MethodNewlineRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -29,12 +29,12 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
 
                 int currentIndex = methodSyntax.IndexOf(methodDeclaration);
 
-                for (int i = currentIndex + 1; i < methodSyntax.Count; i++)
+                for (int i = currentIndex + 1; i < methodSyntax.Count; ++i)
                 {
                     var nextMethod = methodSyntax[i];
 
                     var currentMethodEndLine = methodDeclaration.GetLocation().GetLineSpan().EndLinePosition.Line;
-                    var nextMethodStartLine = nextMethod.GetLocation().GetLineSpan().StartLinePosition.Line;
+                    var nextMethodStartLine  = nextMethod.GetLocation().GetLineSpan().StartLinePosition.Line;
 
                     if (nextMethodStartLine - currentMethodEndLine <= 1)
                     {

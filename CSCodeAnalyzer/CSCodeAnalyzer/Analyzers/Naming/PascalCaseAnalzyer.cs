@@ -11,7 +11,7 @@ namespace CSCodeAnalyzer.Analyzers.Naming
     {
         private static readonly DiagnosticDescriptor Rule = Diagnostics.PascalCaseRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {

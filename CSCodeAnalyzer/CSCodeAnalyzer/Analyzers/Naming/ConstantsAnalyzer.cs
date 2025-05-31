@@ -8,11 +8,11 @@ using System.Linq;
 namespace CSCodeAnalyzer.Analyzers.Naming
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class ConstantAnalyzer : DiagnosticAnalyzer
+    public class ConstantsAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = Diagnostics.PascalCaseRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.ConstantsRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -30,12 +30,12 @@ namespace CSCodeAnalyzer.Analyzers.Naming
                     foreach (var variable in fieldDeclaration.Declaration.Variables)
                     {
                         var constantName = variable.Identifier.Text;
+
                         if (!constantName.All(char.IsUpper) || !constantName.Contains('_'))
                         {
                             var diagnostic = Diagnostic.Create(Rule, variable.Identifier.GetLocation(), constantName);
 
                             context.ReportDiagnostic(diagnostic);
-
                         }
                     }
                 }

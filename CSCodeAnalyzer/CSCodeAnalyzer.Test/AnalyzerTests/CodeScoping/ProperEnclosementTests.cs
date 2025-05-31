@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CSCodeAnalyzer.Analyzers.CodeScoping
 {
-    public class ProperEnclosementAnalyzerTests
+    public class ProperEnclosementTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -27,8 +27,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ProperEnclosementAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Empty(diagnostics);
         }
@@ -50,8 +50,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ProperEnclosementAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }
@@ -73,8 +73,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ProperEnclosementAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }
@@ -96,8 +96,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
                 }";
 
-            var analyzer = new ProperEnclosementAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ProperEnclosementAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }

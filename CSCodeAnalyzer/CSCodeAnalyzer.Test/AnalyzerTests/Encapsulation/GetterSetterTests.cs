@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CSCodeAnalyzer.Analyzers.Encapsulation
 {
-    public class GetterSetterAnalyzerTests
+    public class GetterSetterTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -44,8 +44,8 @@ namespace CSCodeAnalyzer.Analyzers.Encapsulation
                     }
                 }";
 
-            var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new GetterSetterAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Empty(diagnostics);
         }
@@ -69,8 +69,8 @@ namespace CSCodeAnalyzer.Analyzers.Encapsulation
                     }
                 }";
 
-            var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new GetterSetterAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Single(diagnostics);
         }
@@ -78,18 +78,18 @@ namespace CSCodeAnalyzer.Analyzers.Encapsulation
         public void CheckGetterSetter0()
         {
             string source = @"
-        using System;
+                using System;
 
-        namespace TestNamespace
-        {
-            public class testClass
-            {
-                public int i { get; };
-            }
-        }";
+                namespace TestNamespace
+                {
+                    public class testClass
+                    {
+                        public int i { get; };
+                    }
+                }";
 
-            var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new GetterSetterAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
@@ -98,18 +98,18 @@ namespace CSCodeAnalyzer.Analyzers.Encapsulation
         public void CheckGetterSetter1()
         {
             string source = @"
-        using System;
+                using System;
 
-        namespace TestNamespace
-        {
-            public class testClass
-            {
-                public int i { set; };
-            }
-        }";
+                namespace TestNamespace
+                {
+                    public class testClass
+                    {
+                        public int i { set; };
+                    }
+                }";
 
-            var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new GetterSetterAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
@@ -128,8 +128,8 @@ namespace CSCodeAnalyzer.Analyzers.Encapsulation
                     }
                 }";
 
-            var analyzer = new GetterSetterAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new GetterSetterAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }

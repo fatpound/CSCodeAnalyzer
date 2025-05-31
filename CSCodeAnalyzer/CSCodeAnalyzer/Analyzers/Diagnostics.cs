@@ -30,7 +30,7 @@ namespace CSCodeAnalyzer
             defaultSeverity:    DiagnosticSeverity.Info,
             isEnabledByDefault: true
         );
-        public static readonly DiagnosticDescriptor IndentationRule       = new DiagnosticDescriptor(
+        public static readonly DiagnosticDescriptor IndentationsRule      = new DiagnosticDescriptor(
             id:                 "HF004",
             title:              "Indentation Rule",
             messageFormat:      "Line {0}: Use four spaces",
@@ -49,7 +49,7 @@ namespace CSCodeAnalyzer
             defaultSeverity:    DiagnosticSeverity.Info,
             isEnabledByDefault: true
         );
-        public static readonly DiagnosticDescriptor MethodNewLineRule     = new DiagnosticDescriptor(
+        public static readonly DiagnosticDescriptor MethodNewlineRule     = new DiagnosticDescriptor(
             id:                 "HF006",
             title:              "New Line Rule",
             messageFormat:      "You should add a new line between methods",
@@ -92,7 +92,7 @@ namespace CSCodeAnalyzer
             defaultSeverity:    DiagnosticSeverity.Warning,
             isEnabledByDefault: true
         );
-        public static readonly DiagnosticDescriptor NestedIfCounterRule   = new DiagnosticDescriptor(
+        public static readonly DiagnosticDescriptor NestedIfDepthRule     = new DiagnosticDescriptor(
             id:                 "HF010",
             title:              "Detect Nested If Statements",
             messageFormat:      "Nested if statements detected. Maximum allowed depth is 3.",

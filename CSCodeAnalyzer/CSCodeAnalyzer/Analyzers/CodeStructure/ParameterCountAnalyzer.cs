@@ -11,7 +11,7 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
     {
         private static readonly DiagnosticDescriptor Rule = Diagnostics.ParameterCountRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {

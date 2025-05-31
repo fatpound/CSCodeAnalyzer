@@ -32,11 +32,12 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                 if (childNode.IsKind(SyntaxKind.ParenthesizedExpression))
                 {
                     var parenthesizedExpression = (ParenthesizedExpressionSyntax)childNode;
-                    // Check for mismatched parentheses
+
                     var openParenToken  = parenthesizedExpression.OpenParenToken;
                     var closeParenToken = parenthesizedExpression.CloseParenToken;
 
                     // Check for unclosed parentheses
+                    //
                     if (openParenToken.IsMissing && !closeParenToken.IsMissing)
                     {
                         var diagnostic = Diagnostic.Create(Rule, closeParenToken.GetLocation(), "Unclosed parenthesis");
@@ -44,6 +45,7 @@ namespace CSCodeAnalyzer.Analyzers.CodeScoping
                     }
 
                     // Check for unopened parentheses
+                    //
                     if (!openParenToken.IsMissing && closeParenToken.IsMissing)
                     {
                         var diagnostic = Diagnostic.Create(Rule, openParenToken.GetLocation(), "Unopened parenthesis");

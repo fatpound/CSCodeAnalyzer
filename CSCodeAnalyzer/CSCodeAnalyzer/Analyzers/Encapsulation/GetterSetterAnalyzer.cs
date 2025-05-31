@@ -19,15 +19,14 @@ namespace CSCodeAnalyzer.Analyzers.Encapsulation
             context.RegisterSyntaxNodeAction(AnalyzeGetterSetter, SyntaxKind.PropertyDeclaration);
         }
 
-
         private static void AnalyzeGetterSetter(SyntaxNodeAnalysisContext context)
         {
             if (context.Node is PropertyDeclarationSyntax propertyDeclaration)
             {
                 if (propertyDeclaration.AccessorList != null)
                 {
-                    bool hasGetAccessor = false;
-                    bool hasSetAccessor = false;
+                    bool hasGetAccessor        = false;
+                    bool hasSetAccessor        = false;
                     bool hasInvalidGetAccessor = false;
                     bool hasInvalidSetAccessor = false;
 
@@ -36,14 +35,17 @@ namespace CSCodeAnalyzer.Analyzers.Encapsulation
                         if (accessor.Kind() == SyntaxKind.GetAccessorDeclaration)
                         {
                             hasGetAccessor = true;
+
                             if (accessor.Body == null && accessor.ExpressionBody == null && accessor.SemicolonToken.IsKind(SyntaxKind.None))
                             {
                                 hasInvalidGetAccessor = true;
                             }
                         }
+
                         if (accessor.Kind() == SyntaxKind.SetAccessorDeclaration)
                         {
                             hasSetAccessor = true;
+
                             if (accessor.Body == null && accessor.ExpressionBody == null && accessor.SemicolonToken.IsKind(SyntaxKind.None))
                             {
                                 hasInvalidSetAccessor = true;

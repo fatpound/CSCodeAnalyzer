@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CSCodeAnalyzer.Analyzers.Identifiers
 {
-    public class PublicPropertyTests
+    public class PrivateMethodTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -11,41 +11,46 @@ namespace CSCodeAnalyzer.Analyzers.Identifiers
         };
 
         [Fact]
-        public void CheckPublicProperty0()
+        public void CheckPrivateMethod0()
         {
             string source = @"
                 using System;
 
                 namespace TestNamespace
                 {
-                    class testClass
+                    public class TestClass
                     {
+                        private void TestMethod()
+                        {
 
+                        }
                     }
                 }";
 
-            var analyzer = new PublicPropertyAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new PrivateMethodAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
-
         [Fact]
-        public void CheckPublicProperty1()
+        public void CheckPrivateMethod1()
         {
             string source = @"
                 using System;
 
                 namespace TestNamespace
                 {
-                    class testClass
+                    public class TestClass
                     {
-                        int PublicProperty { get; set; }
+                        public void TestMethod()
+                        {
+
+                        }
                     }
                 }";
 
-            var analyzer = new PublicPropertyAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new PrivateMethodAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

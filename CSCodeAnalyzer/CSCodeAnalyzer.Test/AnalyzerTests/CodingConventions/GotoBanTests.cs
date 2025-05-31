@@ -1,9 +1,9 @@
 using Microsoft.CodeAnalysis;
 using Xunit;
 
-namespace CSCodeAnalyzer.Analyzers.Identifiers
+namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
-    public class PublicClassTests
+    public class GotoBanTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -11,21 +11,25 @@ namespace CSCodeAnalyzer.Analyzers.Identifiers
         };
 
         [Fact]
-        public void CheckPublicClass0()
+        public void CheckGoto0()
         {
             string source = @"
                 using System;
 
                 namespace TestNamespace
                 {
-                    class testClass
+                    public class testClass
                     {
-
+                        public void testMethod()
+                        {
+                            label:
+                                    goto label;
+                        }
                     }
                 }";
 
-            var analyzer = new PublicClassAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new GotoBanAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

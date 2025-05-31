@@ -27,8 +27,8 @@ namespace CSCodeAnalyzer.Analyzers.Naming
                     }
                 }";
 
-            var analyzer = new PascalCaseAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new PascalCaseAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(2, diagnostics.Length);
 
@@ -60,8 +60,8 @@ namespace CSCodeAnalyzer.Analyzers.Naming
                     }
                 }";
 
-            var analyzer = new PascalCaseAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new PascalCaseAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -83,8 +83,8 @@ namespace CSCodeAnalyzer.Analyzers.Naming
                     }
                 }";
 
-            var analyzer = new PascalCaseAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new PascalCaseAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }

@@ -23,9 +23,10 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
             var root = context.Tree.GetRoot(context.CancellationToken);
             var lines = root.ToFullString().Split('\n');
 
-            for (int i = 0; i < lines.Length; i++)
+            for (int i = 0; i < lines.Length; ++i)
             {
                 var line = lines[i];
+
                 if (line.Length > 120)
                 {
                     var diagnostic = Diagnostic.Create(

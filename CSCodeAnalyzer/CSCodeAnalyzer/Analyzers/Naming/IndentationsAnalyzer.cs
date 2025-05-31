@@ -9,9 +9,9 @@ namespace CSCodeAnalyzer.Analyzers.Naming
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class IndentationsAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = Diagnostics.IndentationRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.IndentationsRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Diagnostics.IndentationRule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -22,19 +22,18 @@ namespace CSCodeAnalyzer.Analyzers.Naming
 
         private static void AnalyzeIndentations(SyntaxTreeAnalysisContext context)
         {
-            var root = context.Tree.GetRoot(context.CancellationToken);
+            var root  = context.Tree.GetRoot(context.CancellationToken);
             var lines = root.GetText().Lines;
 
             foreach (var line in lines)
             {
                 var leadingSpaces = line.ToString().TakeWhile(c => c == ' ').Count();
+
                 if (leadingSpaces % 4 != 0)
                 {
                     var startPosition = line.Span.Start; // Get the start position of the line
                     var location = Location.Create(context.Tree, new TextSpan(startPosition, line.Span.Length));
-                    var diagnostic = Diagnostic.Create(Rule,
-                                                       location,
-                                                       line.LineNumber + 1); // Adjust line number to 1-based index
+                    var diagnostic = Diagnostic.Create(Rule, location, line.LineNumber + 1); // Adjust line number to 1-based index
                     context.ReportDiagnostic(diagnostic);
                 }
             }

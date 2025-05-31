@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="CSCodeAnalyzer.c4184080-af28-4db9-a60c-b0016383ec09" Version="1.0" Language="en-US" Publisher="fatpound and hakan4vg"/>
+        <Identity Id="CSCodeAnalyzer.c4184080-af28-4db9-a60c-b0016383ec09" Version="1.3" Language="en-US" Publisher="fatpound and hakan4vg"/>
         <DisplayName>CSCodeAnalyzer</DisplayName>
-        <Description xml:space="preserve">A basic C# Static Code Analyzer Extension for VS2022, powered by Roslyn.</Description>
+        <Description xml:space="preserve">C# Static Code Analyzer Extension for VS2022, powered by Roslyn.</Description>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)">

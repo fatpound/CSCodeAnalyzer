@@ -9,9 +9,9 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class NestedIfDepthAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = Diagnostics.NestedIfCounterRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.NestedIfDepthRule;
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -26,6 +26,7 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
             {
                 int currentIfDepth = 0;
                 int maxDepth = 0;
+
                 AnalyzeDepth(ifStatement, ref currentIfDepth, ref maxDepth);
 
                 if (maxDepth > 3)

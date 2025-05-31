@@ -27,8 +27,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
                     }
                 }";
 
-            var analyzer = new ParameterCountAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ParameterCountAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -50,8 +50,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
                     }
                 }";
 
-            var analyzer = new ParameterCountAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ParameterCountAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(0, diagnostics.Length);
         }
@@ -73,8 +73,8 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
                     }
                 }";
 
-            var analyzer = new ParameterCountAnalyzer();
-            var diagnostics = CSCodeAnalyzer.CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
+            var analyzer    = new ParameterCountAnalyzer();
+            var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
         }
