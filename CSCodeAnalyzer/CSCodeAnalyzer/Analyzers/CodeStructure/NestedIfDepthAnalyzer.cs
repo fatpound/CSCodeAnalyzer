@@ -46,7 +46,11 @@ namespace CSCodeAnalyzer.Analyzers.CodeStructure
                 maxDepth = currentIfDepth;
             }
 
-            if (ifStatement.Statement is BlockSyntax block)
+            if (ifStatement.Statement is IfStatementSyntax nestedDirectIf)
+            {
+                AnalyzeDepth(nestedDirectIf, ref currentIfDepth, ref maxDepth);
+            }
+            else if (ifStatement.Statement is BlockSyntax block)
             {
                 foreach (var statement in block.Statements)
                 {
