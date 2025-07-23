@@ -73,10 +73,10 @@ namespace CSCodeAnalyzer
             defaultSeverity:    DiagnosticSeverity.Warning,
             isEnabledByDefault: true
         );
-        public static readonly DiagnosticDescriptor VarBanRule            = new DiagnosticDescriptor(
+        public static readonly DiagnosticDescriptor VarRule               = new DiagnosticDescriptor(
             id:                 "HF009",
-            title:              "Var Ban Rule",
-            messageFormat:      "Using var instead of type is considered a bad practice",
+            title:              "Var Rule",
+            messageFormat:      "Be cautious when using var. Consider using explicit types if it improves readability.",
             category:           "CodingConventions",
             defaultSeverity:    DiagnosticSeverity.Info,
             isEnabledByDefault: true
@@ -99,7 +99,7 @@ namespace CSCodeAnalyzer
             category:           "CodeStructure",
             defaultSeverity:    DiagnosticSeverity.Warning,
             isEnabledByDefault: true,
-            description: "This analyzer detects nested if statements and differentiates them from same level if statements."
+            description:        "This analyzer detects nested if statements and differentiates them from same level if statements."
         );
         public static readonly DiagnosticDescriptor CurlyBracesRule       = new DiagnosticDescriptor(
             id:                 "HF011",

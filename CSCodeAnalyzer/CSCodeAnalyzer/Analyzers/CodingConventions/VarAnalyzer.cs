@@ -7,9 +7,9 @@ using System.Collections.Immutable;
 namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class VarBanAnalyzer : DiagnosticAnalyzer
+    public class VarAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly DiagnosticDescriptor Rule = Diagnostics.VarBanRule;
+        private static readonly DiagnosticDescriptor Rule = Diagnostics.VarRule;
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

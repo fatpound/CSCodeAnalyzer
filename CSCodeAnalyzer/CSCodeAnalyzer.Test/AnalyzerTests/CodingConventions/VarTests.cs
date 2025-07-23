@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CSCodeAnalyzer.Analyzers.CodingConventions
 {
-    public class VarBanTests
+    public class VarTests
     {
         private static readonly MetadataReference[] References = new[]
         {
@@ -27,7 +27,7 @@ namespace CSCodeAnalyzer.Analyzers.CodingConventions
                     }
                 }";
 
-            var analyzer    = new VarBanAnalyzer();
+            var analyzer    = new VarAnalyzer();
             var diagnostics = CodeAnalyzer.GetSortedDiagnostics(analyzer, source);
 
             Assert.Equal(1, diagnostics.Length);
